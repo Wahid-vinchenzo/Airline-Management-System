@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Flights</h2>
+<table>
+  <thead><tr><th>Code</th><th>From</th><th>To</th><th>Depart</th><th>Capacity</th><th>Action</th></tr></thead>
+  <tbody>
+  {% for f in flights %}
+    <tr>
+      <td>{{ f.code }}</td>
+      <td>{{ f.origin }}</td>
+      <td>{{ f.destination }}</td>
+      <td>{{ f.depart }}</td>
+      <td>{{ f.capacity }}</td>
+      <td><a href="{{ url_for('book_page', flight_id=f.id) }}">Book</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to Airline Management System</h1>
+<h3>Upcoming Flights</h3>
+<ul>
+  {% for f in flights %}
+    <li>
+      <strong>{{ f.code }}</strong> — {{ f.origin }} → {{ f.destination }}
+      (Depart: {{ f.depart }}) &nbsp;
+      <a href="{{ url_for('book_page', flight_id=f.id) }}">Book</a>
+    </li>
+  {% else %}
+    <li>No flights</li>
+  {% endfor %}
+</ul>
+{% endblock %}

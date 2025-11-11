@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Report</h2>
+<table>
+  <thead><tr><th>Flight</th><th>Bookings</th><th>Revenue</th></tr></thead>
+  <tbody>
+    {% for r in report_data %}
+      <tr>
+        <td>{{ r.flight.code }} ({{ r.flight.origin }}→{{ r.flight.destination }})</td>
+        <td>{{ r.bookings }}</td>
+        <td>{{ r.revenue }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

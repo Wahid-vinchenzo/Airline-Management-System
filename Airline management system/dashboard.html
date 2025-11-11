@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Total bookings: {{ total_bookings }}</p>
+<p>Total revenue: {{ total_revenue }}</p>
+
+<h3>Flights</h3>
+<ul>
+  {% for f in flights %}
+    <li>{{ f.code }} — {{ f.origin }}→{{ f.destination }} ({{ f.depart }})</li>
+  {% endfor %}
+</ul>
+{% endblock %}

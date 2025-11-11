@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Book Flight: {{ flight.code }} ({{ flight.origin }} → {{ flight.destination }})</h2>
+<form id="bookForm">
+  <input type="hidden" id="flight_id" value="{{ flight.id }}">
+  <label>Name: <input id="name" required></label><br>
+  <label>Email: <input id="email"></label><br>
+  <label>Phone: <input id="phone"></label><br>
+  <label>Seat (optional): <input id="seat_no" type="number" min="1" max="{{ flight.capacity }}"></label><br>
+  <button type="submit">Book Now</button>
+</form>
+
+<div id="result"></div>
+
+<script src="{{ url_for('static', filename='js/booking.js') }}"></script>
+{% endblock %}
