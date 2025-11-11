@@ -1,6 +1,4 @@
-
-cat > requirements.txt <<'EOF'
-Flask>=2.3.3,<3
+echo "Flask>=2.3.3,<3
 Flask-Login
 Flask-WTF
 Flask-Migrate
@@ -8,8 +6,4 @@ Flask-SQLAlchemy
 psycopg2-binary
 SQLAlchemy
 python-dotenv
-bcrypt
-EOF
-
-
-
+bcrypt" > requirements.txt
